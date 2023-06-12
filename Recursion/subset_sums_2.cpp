@@ -59,7 +59,6 @@ public:
         sort(nums.begin(),nums.end());
         set<vector<int>>st;
         subset(0,v,nums,st,n);
-
         for(auto it=st.begin();it!=st.end();it++){
             ans.push_back(*it);
         }
