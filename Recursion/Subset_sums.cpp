@@ -3,6 +3,8 @@
 using namespace std; 
 
 // } Driver Code Ends
+
+// Naive approach
 class Solution
 {
     
@@ -27,6 +29,30 @@ vector<int>su;
         return su;
     }
 };
+
+// Optimised approach
+
+// class Solution
+// {
+    
+// public:
+//     void ss(int i,vector<int>&arr,int n,int sum,vector<int>&ans){
+//         if(i>=n){
+//             ans.push_back(sum);
+//             return;
+//         }
+// //      Picking up
+//        ss(i+1,arr,n,sum+arr[i],ans);
+// //.     Not picking up       
+//        ss(i+1,arr,n,sum,ans);
+//     }
+//     vector<int> subsetSums(vector<int> arr, int N)
+//     {
+//         vector<int>ans;
+//         ss(0,arr,N,0,ans);
+//         return ans;
+//     }
+// };
 
 //{ Driver Code Starts.
 int main()

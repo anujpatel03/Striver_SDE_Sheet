@@ -1,5 +1,5 @@
 /*
-
+// Naive approach
 // Method 1
 
 class Solution {
@@ -62,6 +62,29 @@ public:
         for(auto it=st.begin();it!=st.end();it++){
             ans.push_back(*it);
         }
+        return ans;
+    }
+};
+
+// Optimal solution
+
+class Solution {
+public:
+    void subset(int ind,vector<int>&v,vector<int>&arr,int n,vector<vector<int>>&ans){
+        ans.push_back(v);
+        for(int i=ind;i<n;i++){
+            if(i!=ind && arr[i]==arr[i-1]) continue;
+            v.push_back(arr[i]);
+            subset(i+1,v,arr,n,ans);
+            v.pop_back();
+        }
+    }
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        int n=nums.size();
+        vector<vector<int>>ans;
+        vector<int>v;
+        sort(nums.begin(),nums.end());
+        subset(0,v,nums,n,ans);
         return ans;
     }
 };
